@@ -1,0 +1,16 @@
+import { Types } from 'mongoose';
+
+export interface ICartItem {
+  productId: Types.ObjectId;
+  quantity: number;
+  price: number;
+}
+
+export interface ICart {
+  _id?: Types.ObjectId;
+  userId: Types.ObjectId;
+  products: ICartItem[];
+  subTotal: number;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
